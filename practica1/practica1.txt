@@ -24,4 +24,4 @@ rm -rf copia_etc
 16) mkdir tmp/
 find /etc -type f -size +10k -size -20k -name "g*" -exec cp -r {} tmp/ \;
 17) find -type f ! -perm 000 -exec chmod 600 {} \;
-18) 
+18) find /usr/bin /usr/sbin -type f -user root ! -perm -u=u -printf 'Fichero: %p, permisos: %M\n'
